@@ -10,10 +10,24 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'org.testng:testng:6.14.3'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.1.2'
+    implementation 'io.github.bonigarcia:webdrivermanager:5.1.0'
+    testImplementation 'io.cucumber:cucumber-java:6.10.0'
+    testImplementation 'io.cucumber:cucumber-testng:6.10.0'
 }
 
-test {
-    useJUnitPlatform()
+task automationTest(type: Test) {
+    useTestNG() {
+        useDefaultListeners = true; // for listeners
+        scanForTestClasses = false; // we want to trigger suite
+        testLogging.showStandardStreams = true; // for logs
+
+        systemProperties project.properties.subMap(["Type"])
+        String testValue = System.getProperty("Type");
+        System.out.println(testValue)
+
+        if (testValue.equals("productPurchaseJourney")) {
+            suites "src\\test\\productPurchaseJourney.xml"
+        }       }
 }
