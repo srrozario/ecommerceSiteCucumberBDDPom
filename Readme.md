@@ -10,7 +10,7 @@ This project aims to automate the end-to-end product purchase journey on the Mag
 
 | bash                                                                       |
 |----------------------------------------------------------------------------|
-| **git clone** https://github.com/your-username/magento-automated-tests.git |
+| **git clone** https://github.com/your-username/ecommerceSiteCucumberBDDPom.git |
 
 2. Import the project into your IDE (e.g., IntelliJ) as a Gradle project.
 
