@@ -28,6 +28,6 @@ task automationTest(type: Test) {
         System.out.println(testValue)
 
         if (testValue.equals("productPurchaseJourney")) {
-            suites "src\\test\\productPurchaseJourney.xml"
+            suites "src/test/productPurchaseJourney.xml"
         }       }
 }
