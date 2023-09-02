@@ -39,7 +39,7 @@ jobs:
         attachments: ./build/reports/featureReport.html
 
         from: Github Actions
-        to: sajibsqa@gmail.com,srozario58@yahoo.com
+        to: rozariosajib93@gmail.com
         content_type: text/html
           # Optional converting Markdown to HTML (set content_type to text/html too):
         convert_markdown: true
