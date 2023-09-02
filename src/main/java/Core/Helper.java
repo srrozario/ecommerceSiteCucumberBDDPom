@@ -44,6 +44,11 @@ public WebDriver driver;
         prefs.put("profile", profile);
         options.setExperimentalOption("prefs", prefs);
         options.addArguments("--remote-allow-origins=*");
+        //headless automation
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
+
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
